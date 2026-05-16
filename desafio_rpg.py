@@ -17,10 +17,9 @@ def saudacao_heroi(nome):
 #          heroi_vivo(0)  → False
 def heroi_vivo(hp):
     if hp > 0:
-        return True 
+        return True
     else:
-        return False 
-
+        return False
 
 # Desafio 3 - Calcular dano
 # Um guerreiro causa dano = forca * multiplicador.
@@ -35,25 +34,23 @@ def calcular_dano(forca, multiplicador):
 #   "arqueiro"  → "Preciso como uma flecha"
 # Para qualquer outro valor, retorne "Classe desconhecida"
 def descricao_classe(classe):
-    if classe == "guerreiro":
+    if(classe == "guerreiro"):
         return "Especialista em combate corpo a corpo"
-    elif classe == "mago":
+    elif(classe == "mago"):
         return "Mestre das artes arcanas"
-    elif classe == "arqueiro":
+    elif(classe == "arqueiro"):
         return "Preciso como uma flecha"
     else:
         return "Classe desconhecida"
-
 
 # Desafio 5 - Verificar inventário
 # Retorne True se o item estiver na lista inventario, senão False.
 # Exemplo: tem_item(["espada", "escudo", "poção"], "escudo") → True
 def tem_item(inventario, item):
     if item in inventario:
-        return True 
+        return True
     else:
         return False
-
 
 # Desafio 6 - Calcular nível
 # O herói sobe de nível a cada 100 pontos de experiência (xp).
@@ -61,9 +58,15 @@ def tem_item(inventario, item):
 # Exemplo: calcular_nivel(0)   → 1
 #          calcular_nivel(100) → 2
 #          calcular_nivel(350) → 4
-def calcular_nivel(xp):
-    import math
-    return math.ceil((xp+1)/100)
+def calcular_nivel(xp): 
+    x = xp / 100 + 1
+    if x % 100 + 1 != 0:
+        while x % 100 + 1 != 0:
+            x += -0.01
+    else:
+        x = x
+    return x
+
     
 
 # Desafio 7 - Usar poção de cura
@@ -71,11 +74,7 @@ def calcular_nivel(xp):
 # Exemplo: usar_pocao(80, 30, 100) → 100  (80+30=110, mas máximo é 100)
 #          usar_pocao(50, 20, 100) → 70
 def usar_pocao(hp_atual, cura, hp_maximo):
-    hp_temporario = hp_atual + cura
-    if hp_maximo > hp_temporario:
-        return hp_temporario
-    else:
-        return hp_maximo
+    pass
     
 
 # Desafio 8 - Resultado da batalha
@@ -83,12 +82,7 @@ def usar_pocao(hp_atual, cura, hp_maximo):
 # Retorne o nome do vencedor ou "Empate!" se a força for igual.
 # Exemplo: resultado_batalha("Aragorn", 15, "Sauron", 20) → "Sauron"
 def resultado_batalha(nome1, forca1, nome2, forca2):
-    if forca1 == forca2:
-        return "Empate!" 
-    elif forca1 > forca2:
-        return nome1
-    else:
-        return nome2
+    pass
 
 
 # Desafio 9 - Total da loja
@@ -97,10 +91,7 @@ def resultado_batalha(nome1, forca1, nome2, forca2):
 # Exemplo: total_loja([10, 20, 30], 0)  → 60
 #          total_loja([10, 20, 30], 10) → 54.0  (10% de desconto)
 def total_loja(precos, desconto=0):
-    if desconto > 0:
-        return precos * desconto/100
-    else:
-        return precos
+    pass
 
 
 # Desafio 10 - Ficha do herói
